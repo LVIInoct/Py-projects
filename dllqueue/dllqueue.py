@@ -65,24 +65,25 @@ class DoublyLinkedList:
 def main():
     queue = DoublyLinkedList()
     while True:
-        print("What would you like to do?\n1) append\n2) delete\n3)display forwards\n4) display backwards\n5) exit")
+        print("What would you like to do?\n1) append\n2) delete\n3) display forwards\n4) display backwards\n5) exit")
         choice = int(input(">"))
         # checking input
         match choice:
             case 1:
                 print("Enter a value:")
                 value = int(input())
-                list.append(value)
+                queue.append(value)
             case 2:
-                list.delete()
+                queue.delete()
             case 3:
-                list.display_forward()
+                queue.display_forward()
             case 4:
-                list.display_backward()
+                queue.display_backward()
             case 5:
                 break
             case _:
                 print("Please give a valid answer as an integer.")
+
 
 
 main()
