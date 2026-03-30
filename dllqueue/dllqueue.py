@@ -66,12 +66,20 @@ def main():
     queue = DoublyLinkedList()
     while True:
         print("What would you like to do?\n1) append\n2) delete\n3) display forwards\n4) display backwards\n5) exit")
-        choice = int(input(">"))
+        try:
+            choice = int(input(">"))
+        except ValueError:
+            print("Please enter a valid integer")
+            continue
         # checking input
         match choice:
             case 1:
                 print("Enter a value:")
-                value = int(input())
+                try:
+                    value = int(input(">"))
+                except ValueError:
+                    print("Please enter a valid integer")
+                    continue
                 queue.append(value)
             case 2:
                 queue.delete()
@@ -83,7 +91,6 @@ def main():
                 break
             case _:
                 print("Please give a valid answer as an integer.")
-
 
 
 main()
